@@ -17,6 +17,7 @@ async def all_texts() -> list[SText]:
     texts = await TextRepository.find_all()
     return texts
 
+
 @router.put("")
 async def edit_text(text_id: int, text: str) -> STextID:
     text_id = await TextRepository.edit_text(text_id, text)
