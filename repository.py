@@ -26,3 +26,13 @@ class TextRepository:
             await session.commit()
 
             return STextID(text_id=text_model.id)
+
+    @classmethod
+    async def get_text(cls, text_id: int) -> SText:
+        async with new_session() as session:
+            query = select(TextOrm).where(TextOrm.id == text_id)
+            result = await session.execute(query)
+            text_model = result.scalar()
+            text_schema = SText.model_validate(text_model)
+
+            return text_schema
