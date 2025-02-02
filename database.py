@@ -4,7 +4,7 @@ from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
 
 engine = create_async_engine(
-    "postgresql+asyncpg://gen_user:FL4pYz%2Bz1Bna%3Et@213.226.127.225:5432/default_db",
+    'postgresql+asyncpg://gen_user:eZfIH)A%3A%7D9O%26%25k@null:5432/default_db',
 )
 
 new_session = async_sessionmaker(engine, expire_on_commit=False)
